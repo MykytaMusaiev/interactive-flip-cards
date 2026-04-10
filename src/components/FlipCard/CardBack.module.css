@@ -1,0 +1,111 @@
+.card-back {
+    width: 100%;
+    height: 100%;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--color-surface);
+    border-radius: 16px;
+}
+
+.card-back__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-back__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.card-back__rarity {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+    border: 1px solid currentColor;
+    border-radius: 12px;
+    padding: 2px 10px;
+}
+
+.card-back__description {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    flex: 1;
+}
+
+.card-back__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat__label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    width: 52px;
+    flex-shrink: 0;
+}
+
+.stat__bar {
+    flex: 1;
+    height: 6px;
+    background: var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stat__fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+.stat__fill--power {
+    background: #ef4444;
+}
+.stat__fill--defense {
+    background: #3b82f6;
+}
+.stat__fill--speed {
+    background: #10b981;
+}
+
+.stat__value {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    width: 24px;
+    text-align: right;
+}
+
+.card-back__delete {
+    width: 100%;
+    padding: 10px;
+    background: var(--color-danger);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+    margin-top: auto;
+}
+
+.card-back__delete:hover {
+    background: var(--color-danger-hover);
+    transform: translateY(-1px);
+}
