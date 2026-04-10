@@ -47,6 +47,17 @@ export interface FormErrors {
     speed?: string;
 }
 
+export interface ConfirmModalProps {
+    message: string;
+    onConfirm: () => void;
+    onCancel: () => void;
+}
+
+export interface ModalState {
+    isOpen: boolean;
+    cardId: string | null;
+}
+
 // ─── Component props ─────────────────────────────────────────────────────────
 
 export interface CardFrontProps {
