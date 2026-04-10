@@ -64,6 +64,13 @@ export interface ThemeToggleProps {
     onToggle: () => void;
 }
 
+export interface HeaderProps {
+    favoritesCount: number;
+    totalCount: number;
+    theme: Theme;
+    onToggleTheme: () => void;
+}
+
 // ─── Hook return types ───────────────────────────────────────────────────────
 
 export interface UseDragAndDropReturn {
