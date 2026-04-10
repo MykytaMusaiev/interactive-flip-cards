@@ -13,13 +13,21 @@ const FlipCard: React.FC<FlipCardProps> = ({
   onDragStart,
   onDragOver,
   onDragEnd,
+  onFlip,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const isDragging = dragIndex === index;
 
-  const handleMouseEnter = () => setIsFlipped(true);
-  const handleMouseLeave = () => setIsFlipped(false);
+  const handleMouseEnter = () => {
+    setIsFlipped(true);
+    onFlip();
+  };
+
+  const handleMouseLeave = () => {
+    setIsFlipped(false);
+    onFlip();
+  };
 
   return (
     <div

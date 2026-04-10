@@ -4,7 +4,7 @@ export const initialCards: Card[] = [
     {
         id: "1",
         title: "Fire Dragon",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Komodo_dragon_with_tongue.jpg/800px-Komodo_dragon_with_tongue.jpg",
+        image: "https://images.photowall.com/products/74803/phoenix-dragon.jpg?h=699&q=85",
         description:
             "Ancient beast born from volcanic fury. Its breath melts steel and its scales resist any blade.",
         category: "fire",
@@ -14,7 +14,7 @@ export const initialCards: Card[] = [
     {
         id: "2",
         title: "Water Serpent",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Aesculapian_snake_(Zamenis_longissimus).jpg/800px-Aesculapian_snake_(Zamenis_longissimus).jpg",
+        image: "https://t3.ftcdn.net/jpg/05/63/40/66/360_F_563406619_QYdRTMVcuEoUnDZG6Qvw7tuhz4bTuxj1.jpg",
         description:
             "Dweller of the deep ocean trenches. Controls tides and can summon storms at will.",
         category: "water",
@@ -24,7 +24,7 @@ export const initialCards: Card[] = [
     {
         id: "3",
         title: "Earth Titan",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/600px-Earth_Western_Hemisphere_transparent_background.png",
+        image: "https://img.freepik.com/free-photo/cartoon-dragon-character_23-2151129024.jpg?semt=ais_rp_progressive&w=740&q=80",
         description:
             "Unwavering force of mountains and earth. Its footsteps cause earthquakes across continents.",
         category: "earth",
@@ -34,7 +34,7 @@ export const initialCards: Card[] = [
     {
         id: "4",
         title: "Air Vortex",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Tornado_in_Seymour_Texas_1979.jpg/600px-Tornado_in_Seymour_Texas_1979.jpg",
+        image: "https://lirp.cdn-website.com/64c8bf99/dms3rep/multi/opt/bigstock-Dragon-5056881-640w.jpg",
         description:
             "Invisible force of nature. Moves faster than sound and strikes without warning.",
         category: "air",
@@ -44,7 +44,7 @@ export const initialCards: Card[] = [
     {
         id: "5",
         title: "Fire Phoenix",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Phoenix_zo_Warschau.jpg/600px-Phoenix_zo_Warschau.jpg",
+        image: "https://images.stockcake.com/public/6/b/1/6b13e791-ad0e-473a-a30c-1fefe00e462e_large/fiery-phoenix-rising-stockcake.jpg",
         description:
             "Reborn from ashes after every defeat. Eternal flame that cannot be extinguished.",
         category: "fire",

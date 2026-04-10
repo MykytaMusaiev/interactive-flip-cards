@@ -9,6 +9,7 @@ const CardGrid: React.FC<CardGridProps> = ({
   onDelete,
   onToggleFavorite,
   onReorder,
+  onFlip,
 }) => {
   const { dragIndex, onDragStart, onDragOver, onDragEnd } =
     useDragAndDrop(cards, onReorder);
@@ -30,6 +31,7 @@ const CardGrid: React.FC<CardGridProps> = ({
             onDragStart={onDragStart}
             onDragOver={onDragOver}
             onDragEnd={onDragEnd}
+            onFlip={onFlip}
           />
         ))}
       </div>

@@ -68,6 +68,7 @@ export interface FlipCardProps {
     onDragStart: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
     onDragOver: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
     onDragEnd: () => void;
+    onFlip: () => void;
 }
 
 export interface CardGridProps {
@@ -75,6 +76,7 @@ export interface CardGridProps {
     onDelete: (id: string) => void;
     onToggleFavorite: (id: string) => void;
     onReorder: (cards: Card[]) => void;
+    onFlip: () => void;
 }
 
 export interface AddCardFormProps {
