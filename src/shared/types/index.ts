@@ -25,6 +25,28 @@ export interface Card {
     isFavorite: boolean;
 }
 
+export interface FormFields {
+    title: string;
+    image: string;
+    description: string;
+    category: Category | "";
+    rarity: Rarity | "";
+    power: string;
+    defense: string;
+    speed: string;
+}
+
+export interface FormErrors {
+    title?: string;
+    image?: string;
+    description?: string;
+    category?: string;
+    rarity?: string;
+    power?: string;
+    defense?: string;
+    speed?: string;
+}
+
 // ─── Component props ─────────────────────────────────────────────────────────
 
 export interface CardFrontProps {
