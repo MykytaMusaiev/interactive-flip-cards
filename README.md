@@ -24,7 +24,3 @@ React 19 · TypeScript · Vite · CSS 3D Transforms · HTML5 DnD API
 git clone https://github.com/MykytaMusaiev/interactive-flip-cards.git
 npm install
 npm run dev
-
-## Build
-
-npm run build
