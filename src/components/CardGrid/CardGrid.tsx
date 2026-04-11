@@ -17,7 +17,7 @@ const CardGrid: React.FC<CardGridProps> = ({
   return (
     <div className="card-grid__wrapper">
       <p className="card-grid__hint">
-        💡 Підказка: Перетягуйте картки, щоб змінити їх порядок
+        💡 Hint: Drag the cards to reorder them.
       </p>
       <div className="card-grid">
         {cards.map((card, index) => (
