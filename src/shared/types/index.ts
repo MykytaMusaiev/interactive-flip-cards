@@ -58,6 +58,8 @@ export interface ModalState {
     cardId: string | null;
 }
 
+export type FilterCategory = Category | "all";
+
 // ─── Component props ─────────────────────────────────────────────────────────
 
 export interface CardFrontProps {
@@ -105,6 +107,11 @@ export interface HeaderProps {
     totalCount: number;
     theme: Theme;
     onToggleTheme: () => void;
+}
+
+export interface FilterBarProps {
+    active: FilterCategory;
+    onChange: (category: FilterCategory) => void;
 }
 
 // ─── Hook return types ───────────────────────────────────────────────────────

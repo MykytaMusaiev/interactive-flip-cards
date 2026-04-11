@@ -21,18 +21,20 @@ const CardGrid: React.FC<CardGridProps> = ({
       </p>
       <div className="card-grid">
         {cards.map((card, index) => (
-          <FlipCard
-            key={card.id}
-            card={card}
-            index={index}
-            dragIndex={dragIndex}
-            onDelete={onDelete}
-            onToggleFavorite={onToggleFavorite}
-            onDragStart={onDragStart}
-            onDragOver={onDragOver}
-            onDragEnd={onDragEnd}
-            onFlip={onFlip}
-          />
+          <div key={card.id} className="flip-card-wrapper">
+            <FlipCard
+              key={card.id}
+              card={card}
+              index={index}
+              dragIndex={dragIndex}
+              onDelete={onDelete}
+              onToggleFavorite={onToggleFavorite}
+              onDragStart={onDragStart}
+              onDragOver={onDragOver}
+              onDragEnd={onDragEnd}
+              onFlip={onFlip}
+            />
+          </div>
         ))}
       </div>
     </div>

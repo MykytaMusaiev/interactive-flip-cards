@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Card, ModalState } from './shared/types';
+import type { Card, FilterCategory, ModalState } from './shared/types';
 import { useTheme } from './shared/hooks/useTheme';
 import { useFlipSound } from './shared/hooks/useFlipSound';
 import Header from './components/Header/Header';
@@ -8,6 +8,7 @@ import AddCardForm from './components/AddCardForm/AddCardForm';
 import ConfirmModal from './components/ConfirmModal/ConfirmModal';
 import './App.css';
 import { usePersistentCards } from './shared/hooks/usePersistentCards';
+import FilterBar from './components/FilterBar/FilterBar';
 
 const FLIP_SOUND_SRC = '/sounds/flip.mp3';
 const INITIAL_MODAL: ModalState = { isOpen: false, cardId: null };
@@ -17,6 +18,11 @@ const App: React.FC = () => {
   const [modal, setModal] = useState<ModalState>(INITIAL_MODAL);
   const { theme, toggleTheme } = useTheme();
   const { playFlip } = useFlipSound(FLIP_SOUND_SRC);
+  const [filter, setFilter] = useState<FilterCategory>('all');
+
+  const filteredCards = filter === 'all'
+    ? cards
+    : cards.filter(c => c.category === filter);
 
   const favoritesCount = cards.filter(c => c.isFavorite).length;
 
@@ -61,8 +67,9 @@ const App: React.FC = () => {
       />
       <main className="app__main">
         <AddCardForm onAddCard={handleAddCard} />
+        <FilterBar active={filter} onChange={setFilter} />
         <CardGrid
-          cards={cards}
+          cards={filteredCards}
           onDelete={handleDeleteRequest}
           onToggleFavorite={handleToggleFavorite}
           onReorder={handleReorder}
