@@ -39,11 +39,25 @@
     color: var(--color-text-primary);
 }
 
-.card-front__favorite-indicator {
+.card-front__favorite {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 20px;
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
     pointer-events: none;
+    background: transparent;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-front__favorite--active {
+    border-color: var(--color-favorite);
+    filter: drop-shadow(0 0 4px var(--color-favorite));
 }
