@@ -68,6 +68,7 @@ export interface CardFrontProps {
 export interface CardBackProps {
     card: Card;
     onDelete: (id: string) => void;
+    onToggleFavorite: (id: string) => void;
 }
 
 export interface FlipCardProps {

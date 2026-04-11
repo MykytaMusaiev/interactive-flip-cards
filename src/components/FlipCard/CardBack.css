@@ -11,14 +11,23 @@
 
 .card-back__header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    gap: 8px;
 }
 
 .card-back__title {
     font-size: 16px;
     font-weight: 700;
     color: var(--color-text-primary);
+    flex: 1;
+}
+
+.card-back__header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
 }
 
 .card-back__rarity {
@@ -28,6 +37,33 @@
     border: 1px solid currentColor;
     border-radius: 12px;
     padding: 2px 10px;
+}
+
+.card-back__favorite {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.card-back__favorite:hover {
+    transform: scale(1.15);
+    background: var(--color-bg);
+}
+
+.card-back__favorite--active {
+    border-color: var(--color-favorite);
+    filter: drop-shadow(0 0 4px var(--color-favorite));
 }
 
 .card-back__description {

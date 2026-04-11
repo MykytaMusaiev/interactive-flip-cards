@@ -9,10 +9,15 @@ const RARITY_COLOR: Record<string, string> = {
   legendary: '#f59e0b',
 };
 
-const CardBack: React.FC<CardBackProps> = ({ card, onDelete }) => {
+const CardBack: React.FC<CardBackProps> = ({ card, onDelete, onToggleFavorite }) => {
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     onDelete(card.id);
+  };
+
+  const handleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    onToggleFavorite(card.id);
   };
 
   const { power, defense, speed, rarity } = card.stats;
@@ -21,12 +26,21 @@ const CardBack: React.FC<CardBackProps> = ({ card, onDelete }) => {
     <div className="card-back">
       <div className="card-back__header">
         <h3 className="card-back__title">{card.title}</h3>
-        <span
-          className="card-back__rarity"
-          style={{ color: RARITY_COLOR[rarity] }}
-        >
-          {rarity.charAt(0).toUpperCase() + rarity.slice(1)}
-        </span>
+        <div className="card-back__header-right">
+          <span
+            className="card-back__rarity"
+            style={{ color: RARITY_COLOR[rarity] }}
+          >
+            {rarity.charAt(0).toUpperCase() + rarity.slice(1)}
+          </span>
+          <button
+            className={`card-back__favorite ${card.isFavorite ? 'card-back__favorite--active' : ''}`}
+            onClick={handleFavorite}
+            aria-label={card.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+          >
+            {card.isFavorite ? '⭐' : '☆'}
+          </button>
+        </div>
       </div>
 
       <p className="card-back__description">{card.description}</p>

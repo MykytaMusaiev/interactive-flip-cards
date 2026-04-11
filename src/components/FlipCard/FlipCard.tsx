@@ -49,7 +49,7 @@ const FlipCard: React.FC<FlipCardProps> = ({
           <CardFront card={card} onToggleFavorite={onToggleFavorite} />
         </div>
         <div className="flip-card__face flip-card__face--back">
-          <CardBack card={card} onDelete={onDelete} />
+          <CardBack card={card} onDelete={onDelete} onToggleFavorite={onToggleFavorite} />
         </div>
       </div>
     </div>

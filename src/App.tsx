@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import type { Card, ModalState } from './shared/types';
-import { initialCards } from './shared/data/cards';
 import { useTheme } from './shared/hooks/useTheme';
 import { useFlipSound } from './shared/hooks/useFlipSound';
 import Header from './components/Header/Header';
@@ -8,12 +7,13 @@ import CardGrid from './components/CardGrid/CardGrid';
 import AddCardForm from './components/AddCardForm/AddCardForm';
 import ConfirmModal from './components/ConfirmModal/ConfirmModal';
 import './App.css';
+import { usePersistentCards } from './shared/hooks/usePersistentCards';
 
 const FLIP_SOUND_SRC = '/sounds/flip.mp3';
 const INITIAL_MODAL: ModalState = { isOpen: false, cardId: null };
 
 const App: React.FC = () => {
-  const [cards, setCards] = useState<Card[]>(initialCards);
+  const { cards, updateCards } = usePersistentCards();
   const [modal, setModal] = useState<ModalState>(INITIAL_MODAL);
   const { theme, toggleTheme } = useTheme();
   const { playFlip } = useFlipSound(FLIP_SOUND_SRC);
@@ -21,7 +21,7 @@ const App: React.FC = () => {
   const favoritesCount = cards.filter(c => c.isFavorite).length;
 
   const handleAddCard = (card: Card) => {
-    setCards(prev => [...prev, card]);
+    updateCards([...cards, card]);
   };
 
   const handleDeleteRequest = (id: string) => {
@@ -30,7 +30,7 @@ const App: React.FC = () => {
 
   const handleDeleteConfirm = () => {
     if (modal.cardId) {
-      setCards(prev => prev.filter(c => c.id !== modal.cardId));
+      updateCards(cards.filter(c => c.id !== modal.cardId));
     }
     setModal(INITIAL_MODAL);
   };
@@ -40,13 +40,13 @@ const App: React.FC = () => {
   };
 
   const handleToggleFavorite = (id: string) => {
-    setCards(prev =>
-      prev.map(c => (c.id === id ? { ...c, isFavorite: !c.isFavorite } : c))
+    updateCards(
+      cards.map(c => (c.id === id ? { ...c, isFavorite: !c.isFavorite } : c))
     );
   };
 
   const handleReorder = (reordered: Card[]) => {
-    setCards(reordered);
+    updateCards(reordered);
   };
 
   const deletingCard = cards.find(c => c.id === modal.cardId);
