@@ -1,15 +1,19 @@
 import React from 'react';
 import './ThemeToggle.css';
 import type { ThemeToggleProps } from '../../shared/types';
+import { THEME_CONFIG } from '../../shared/conts/theme';
+
 
 const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => {
+  const config = THEME_CONFIG[theme];
+
   return (
     <button
       className="theme-toggle"
       onClick={onToggle}
-      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+      aria-label={`Switch to ${config.next} theme`}
     >
-      {theme === 'light' ? '🌙' : '🌞'}
+      {config.icon}
     </button>
   );
 };

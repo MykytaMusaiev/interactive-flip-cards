@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useEffectEvent } from 'react';
 import './ConfirmModal.css';
 import type { ConfirmModalProps } from '../../shared/types';
 
@@ -7,15 +7,17 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
   onConfirm,
   onCancel,
 }) => {
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onCancel();
-      if (e.key === 'Enter') onConfirm();
-    };
 
+
+  const handleKeyDown = useEffectEvent((e: KeyboardEvent) => {
+    if (e.key === 'Escape') onCancel();
+    if (e.key === 'Enter') onConfirm();
+  });
+
+  useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [onConfirm, onCancel]);
+  }, []);
 
   return (
     <div className="modal__overlay" onClick={onCancel}>
