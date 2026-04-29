@@ -1,0 +1,164 @@
+.add-card-form__container {
+    padding: 0 32px 24px;
+}
+
+.add-card-form__toggle {
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+.add-card-form__toggle:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+.add-card-form__panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: background 0.3s ease;
+}
+
+.add-card-form__panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.add-card-form__panel-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.add-card-form__close {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.add-card-form__close:hover {
+    background: var(--color-danger);
+    color: #fff;
+    border-color: var(--color-danger);
+}
+
+.add-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.add-card-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.add-card-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.add-card-form__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.add-card-form__input {
+    padding: 10px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 14px;
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.add-card-form__input:focus {
+    border-color: var(--color-accent);
+}
+
+.add-card-form__input--error {
+    border-color: var(--color-danger);
+}
+
+.add-card-form__textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.add-card-form__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.add-card-form__range {
+    width: 100%;
+    accent-color: var(--color-accent);
+    cursor: pointer;
+}
+
+.add-card-form__error {
+    font-size: 12px;
+    color: var(--color-danger);
+    font-weight: 500;
+}
+
+.add-card-form__submit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(
+        135deg,
+        var(--color-accent),
+        var(--color-accent-hover)
+    );
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        opacity 0.2s ease,
+        transform 0.1s ease;
+}
+
+.add-card-form__submit:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+    .add-card-form__row,
+    .add-card-form__stats {
+        grid-template-columns: 1fr;
+    }
+
+    .add-card-form__container {
+        padding: 0 16px 24px;
+    }
+}
